@@ -1,0 +1,46 @@
+{
+  "durability": "прочность",
+  "decay": "гниёт",
+  "hours": "часов",
+  "buildings": "постройки",
+  "The required amount of explosives": "необходимое количество взрывчатки",
+  "choose an explosive": "выберите взрывчатку",
+  "choose the target": "выберите цель",
+  "calculator for the raid": "калькулятор для рейда",
+  "send": "отправить",
+
+  "nav": {
+    "table": "таблица",
+    "expCalc": "калькулятор",
+    "project": "о проекте"
+  },
+
+  "build": {
+    "Wooden Door": "Деревянная дверь",
+    "Sheet Metal Door": "Дверь из листового металла",
+    "Garage Door": "Гаражная дверь",
+    "Armored Door": "Бронированная дверь",
+    "Wooden structures": "Деревянные конструкции",
+    "Stone structures": "Каменные конструкции",
+    "Metal structures": "Металлические конструкции",
+    "Armored structures": "Конструкции из броне-металла"
+  },
+
+  "table": {
+    "item": "предмет",
+    "damage": "урон",
+    "workbench": "верстак",
+    "countScrap": "кол-во скрапа",
+    "resources": "ресурсы",
+    "sulfur": "сера",
+    "charcoal": "уголь",
+    "gunpowder": "порох",
+    "Timed Explosive Charge": "Взрывчатка с таймером",
+    "Rocket": "Ракета",
+    "Satchel Charge": "Связка бобовых гранат",
+    "Beancan Grenade": "Бобовая граната",
+    "High Velocity Rocket": "Скоростная ракета",
+    "ExplosiveAmmo": "Разрывной патрон 5,56 мм",
+    "F1 Grenade": "Граната F1"
+  }
+}

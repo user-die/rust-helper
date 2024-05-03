@@ -1,0 +1,46 @@
+{
+  "durability": "durability",
+  "decay": "decay",
+  "hours": "hours",
+  "buildings": "buildins",
+  "The required amount of explosives": "The required amount of explosives",
+  "choose an explosive": "choose an explosive",
+  "choose the target": "choose the target",
+  "calculator for the raid": "calculator for the raid",
+  "send": "send",
+
+  "nav": {
+    "table": "table",
+    "expCalc": "calculator",
+    "project": "about project"
+  },
+
+  "build": {
+    "Wooden Door": "Wooden Door",
+    "Sheet Metal Door": "Sheet Metal Door",
+    "Garage Door": "Garage Door",
+    "Armored Door": "Armored Door",
+    "Wooden structures": "Wooden structures",
+    "Stone structures": "Stone structures",
+    "Metal structures": "Metal structures",
+    "Armored structures": "Armored structures"
+  },
+
+  "table": {
+    "item": "item",
+    "damage": "damage",
+    "workbench": "workbench",
+    "countScrap": "count scrap",
+    "resources": "resources",
+    "sulfur": "sulfur",
+    "charcoal": "charcoal",
+    "gunpowder": "gunpowder",
+    "Timed Explosive Charge": "Timed Explosive Charge",
+    "Rocket": "Rocket",
+    "Satchel Charge": "Satchel Charge",
+    "Beancan Grenade": "Beancan Grenade",
+    "High Velocity Rocket": "High Velocity Rocket",
+    "ExplosiveAmmo": "Explosive 5.56 Rifle Ammo",
+    "F1 Grenade": "F1 Grenade"
+  }
+}
