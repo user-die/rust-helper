@@ -1,67 +1,86 @@
 <template>
-  <Language></Language>
-  <div class="container">
-    <div class="row justify-content-center">
-      <div class="col-8 text-black">
-        <h5></h5>
-        <p>Проект создан в целях упростить вашу подготовку и ход рейда в Rust.</p>
+  <div class="container mx-auto p-0 w-100">
+    <Language></Language>
+    <div class="row w-100 h-100 m-0 justify-content-center">
+      <article
+        class="h-100 py-1 t-sm-0 col-12 col-lg-8 text-black d-flex flex-column justify-content-around"
+      >
+        <section>
+          <p>{{ t('project.about') }}</p>
+        </section>
 
-        <h5>Что будет в будещем:</h5>
-        <ul>
-          <li>больше конструкций и оружий</li>
-          <li>расчёт максимально дешёвого рейда</li>
-          <li>Мобильное и десктопное приложение</li>
-        </ul>
+        <section>
+          <h5>{{ t('project.future') }}:</h5>
+          <ul>
+            <li>{{ t('project.more') }}</li>
+            <li>{{ t('project.calc') }}</li>
+            <li>{{ t('project.apps') }}</li>
+          </ul>
+        </section>
 
-        <p class="my-4">
-          Вы можете поучавствовать в развитии проекта, предложив свои идеи для нововведений или
-          поддержав проект материально
-          <a target="_blank" href="https://www.donationalerts.com/r/userdie">по ссылке</a>
-        </p>
+        <section>
+          <p>
+            {{ t('project.youcan') }}
+            <a target="_blank" href="https://www.donationalerts.com/r/userdie">{{
+              t('project.link')
+            }}</a>
+          </p>
+        </section>
 
-        <p class="mb-2">
-          Нашли ошибку? Хотите предложить идею? Хотите похвалить автора? Заполните форму ниже !
-        </p>
+        <section class="mb-4">
+          <p class="mb-2">
+            {{ t('project.findErrors') }}
+          </p>
 
-        <form @submit.prevent="onSubmit">
-          <div class="d-flex flex-column mb-2">
-            <label for="email">Email для обратной связи</label>
-            <input
-              type="email"
-              v-model="email"
-              id="email"
-              placeholder="john@doe.com"
-              style="width: 500px"
-            />
-          </div>
-          <div class="d-flex flex-column mb-2">
-            <label for="message">Сообщение</label>
-            <textarea v-model="message" id="message" placeholder="Enter your message..."></textarea>
-          </div>
-          <div class="formcarry-block">
-            <button type="submit">Send</button>
-          </div>
-          <div v-if="showNotification()" class="formcarry-block">
-            <div :class="`formcarry-message-block fc-${icon} active`">
-              <div class="fc-message-icon"></div>
-              <div class="fc-message-content">{{ errorMessage() }}</div>
-              <div class="fc-message-close" @click="resetStates()"></div>
+          <form @submit.prevent="onSubmit" class="d-flex flex-column">
+            <div class="d-flex flex-column mb-2">
+              <label for="email">{{ t('project.Email') }}</label>
+              <input
+                class="form-control"
+                type="email"
+                v-model="email"
+                id="email"
+                placeholder="john@doe.com"
+                style="max-width: 500px"
+              />
             </div>
-          </div>
-        </form>
+            <div class="d-flex flex-column mb-2">
+              <label for="message">{{ t('project.message') }}</label>
+              <textarea
+                class="form-control"
+                v-model="message"
+                id="message"
+                :placeholder="t('project.enterMessage')"
+              ></textarea>
+            </div>
+            <div class="formcarry-block text-center text-lg-start">
+              <button class="btn btn-danger" type="submit">{{ t('project.send') }}</button>
+            </div>
+            <div v-if="showNotification()" class="formcarry-block">
+              <div :class="`formcarry-message-block fc-${icon} active`">
+                <div class="fc-message-icon"></div>
+                <div class="text-danger">{{ errorMessage() }}</div>
+                <div class="fc-message-close" @click="resetStates()"></div>
+              </div>
+            </div>
+          </form>
 
-        <p class="text-center mt-5 text-white">
-          created by <a target="_blank" href="https://github.com/user-die">@userdie</a>
-        </p>
-      </div>
+          <p class="text-center mt-3 mt-sm-5 text-white mb-0">
+            created by <a target="_blank" href="https://github.com/user-die">@userdie</a>
+          </p>
+        </section>
+      </article>
     </div>
   </div>
 </template>
 
 <script setup>
 import { ref } from 'vue'
+import { useI18n } from 'vue-i18n'
+
 var MyFormcarryFormURL = 'https://formcarry.com/s/K-9UHEeerq3'
 
+var { t } = useI18n({ useScope: 'global' })
 var name = ref('')
 var email = ref('')
 var message = ref('')
@@ -118,11 +137,15 @@ var errorMessage = () =>
 </script>
 
 <style scoped>
+* {
+  margin: 0;
+}
+
 .container {
   display: flex;
   gap: 50px;
   justify-content: space-evenly;
-  height: calc(100vh - 30px);
+  height: calc(100vh - 50px);
   align-items: center;
 }
 </style>

@@ -51,7 +51,7 @@ var timedExplosiveCharge = new Explosive(
   explosiveTimed,
   [{ metalFragmenst: 200 }, { cloth: 20 }, { techTrash: 2 }, { animalFat: 45 }],
   3,
-  2125,
+  2550,
   2200,
   3000,
   1100
@@ -68,7 +68,7 @@ var rocket = new Explosive(
   ammoRocket,
   [{ metalFragmenst: 100 }, { cloth: 20 }, { metalPipe: 2 }, { animalFat: 24 }],
   3,
-  2250,
+  2700,
   1400,
   1950,
   700
@@ -119,7 +119,7 @@ var highVelocityRocket = new Explosive(
   ammoRocketHv,
   [{ metalPipe: 1 }],
   2,
-  2425,
+  2676,
   200,
   300,
   100
@@ -136,7 +136,7 @@ var explosiveAmmo = new Explosive(
   ammoExplosive,
   [{ metalFragmenst: 5 }],
   3,
-  1125,
+  1350,
   25,
   30,
   15
@@ -153,7 +153,7 @@ var f1grenade = new Explosive(
   f1,
   [{ metalFragmenst: 25 }],
   2,
-  850,
+  939,
   60,
   90,
   30

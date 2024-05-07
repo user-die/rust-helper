@@ -1,0 +1,61 @@
+{
+  "durability": "durabilidad",
+  "decay": "podrido",
+  "hours": "horas",
+  "buildings": "edificios",
+  "The required amount of explosives": "La cantidad requerida de explosivos.",
+  "choose an explosive": "Elige una explosiva",
+  "choose the target": "elige el objetivo",
+  "calculator for the raid": "Calculadora para la redada",
+  "tableRes": "La tabla de recursos para el raid",
+
+  "project": {
+    "about": "El proyecto fue creado para simplificar tu preparación y el proceso de incursión en el juego Rust..",
+    "future": "Lo que ocurrirá en el futuro",
+    "send": "enviar",
+    "more": "más estructuras y armas",
+    "calc": "cálculo de la redada más barata posible",
+    "apps": "Aplicación móvil y de escritorio",
+    "findErrors": "¿Encontro algun error? ¿Quieres sugerir una idea? ¿Quieres elogiar al autor? ¡Rellena el siguiente formulario!",
+    "Email": "Correo electrónico para comentarios",
+    "message": "Mensaje",
+    "youcan": "Puedes participar en el desarrollo del proyecto ofreciendo tus ideas de innovación o apoyando económicamente el proyecto.",
+    "link": "por el enlace",
+    "enterMessage": "Ingrese su mensaje..."
+  },
+
+  "nav": {
+    "table": "tabla",
+    "expCalc": "calculadora",
+    "project": "sobre el proyecto"
+  },
+
+  "build": {
+    "Wooden Door": "Puerta de madera",
+    "Sheet Metal Door": "Puerta doble de chapa",
+    "Garage Door": "Puerta de garaje",
+    "Armored Door": "Puerta blindada",
+    "Wooden structures": "edificios de madera",
+    "Stone structures": "edificios de piedra",
+    "Metal structures": "edificios de metal",
+    "Armored structures": "edificios deblindada"
+  },
+
+  "table": {
+    "item": "artículo",
+    "damage": "daño",
+    "workbench": "banco de trabajo",
+    "countScrap": "cantidad de chatarra",
+    "resources": "recursos",
+    "sulfur": "azufre",
+    "charcoal": "carbón vegetal",
+    "gunpowder": "pólvora",
+    "Timed Explosive Charge": "carga explosiva con temporizador",
+    "Rocket": "misil",
+    "Satchel Charge": "bolsa explosiva",
+    "Beancan Grenade": "granada de lata",
+    "High Velocity Rocket": "misil de alta velocidad",
+    "ExplosiveAmmo": "munición explosiva del calibre 5.56",
+    "F1 Grenade": "Granada f1"
+  }
+}

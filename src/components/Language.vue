@@ -1,5 +1,5 @@
 <template>
-  <BDropdown class="position-absolute" style="top: 20px; right: 20px">
+  <BDropdown class="position-absolute lang">
     <template v-slot:button-content>
       <svg
         xmlns="http://www.w3.org/2000/svg"
@@ -19,7 +19,7 @@
     </template>
     <BDropdownItem @click="switchLang('ru')">русский</BDropdownItem>
     <BDropdownItem @click="switchLang('en')">english</BDropdownItem>
-    <BDropdownItem>spain</BDropdownItem>
+    <BDropdownItem @click="switchLang('sp')">spain</BDropdownItem>
   </BDropdown>
 </template>
 
@@ -33,3 +33,17 @@ var switchLang = (lang) => {
   sessionStorage.setItem('lang', lang)
 }
 </script>
+
+<style scoped>
+.lang {
+  top: 20px;
+  right: 20px;
+}
+
+@media (max-width: 576px) {
+  .lang {
+    bottom: 20px;
+    top: auto;
+  }
+}
+</style>

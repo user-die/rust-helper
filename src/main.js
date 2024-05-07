@@ -17,14 +17,23 @@ var i18n = createI18n({
   messages: Object.assign(languages)
 })
 
-createApp(App).use(i18n).use(createBootstrap).use(router).mount('#app')
+createApp(App)
+  .use(i18n)
+  .use(createBootstrap({ plugins: { modalController: true } }))
+  .use(router)
+  .mount('#app')
 
-// en , sp, ru, ch
 // Десктопное и мобильное приложение
 
 // Максимально дешёвый рейд
+// ger, franch, ch
+// Фишки о сплеше и стенах
 // Сортовка
 // Милишные оружия
 // Больше оружий
 // Больше построек
+
+// Калькулятор вывода переработчика ???
+// Калькулятор ресурсов для постройки ?
+// Калькулятор крафта
 // калькулятор брони

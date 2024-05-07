@@ -10,7 +10,7 @@ const router = createRouter({
     },
     {
       name: 'info',
-      path: '/info',
+      path: '/',
       component: () => import('./../pages/raidInfo.vue')
     },
     {

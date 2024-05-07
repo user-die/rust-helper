@@ -1,7 +1,38 @@
 <template>
-  <BTable hover small caption-top :items="explosivesData" :fields="filterFields">
+  <BTable
+    hover
+    small
+    caption-top
+    :items="explosivesData"
+    :fields="windowWidth < 900 ? paginationItem : filterFields"
+  >
+    <template #head()="data">
+      <div
+        class="d-flex align-items-center justify-content-center"
+        :class="{ 'justify-content-between': windowWidth < 900 }"
+      >
+        <BButton
+          class="pagination-button"
+          v-if="windowWidth < 900 && data.field.key !== 'item'"
+          :disabled="ex2CurrentPage === 2 && true"
+          @click="ex2CurrentPage--"
+          variant="outline-primary"
+          ><</BButton
+        >
+        <span :class="{ w150: windowWidth < 900 }">{{ data.label }}</span>
+        <BButton
+          class="pagination-button"
+          v-if="windowWidth < 900 && data.field.key !== 'item'"
+          :disabled="ex2CurrentPage === filterFields.length - 1 && true"
+          @click="ex2CurrentPage++"
+          variant="outline-primary"
+          >></BButton
+        >
+      </div>
+    </template>
+
     <template #cell(item)="row" #cell()>
-      <div style="width: 250px" class="position-relative">
+      <div class="position-relative">
         <img :src="row.item.img" alt="" style="width: 60px" />
         <p class="count">
           {{ calcCountItems(row.item) }}
@@ -18,12 +49,12 @@
 
     <template #cell(workbenchLevel)="row">
       <img :src="benchs[row.value]" />
-      <p style="width: 174px">{{ row.value }}</p></template
+      <p>{{ row.value }}</p></template
     >
 
     <template #cell(totalScrap)="row">
       <img :src="resourcesData.scrap" />
-      <p style="width: 174px">{{ row.value }}</p></template
+      <p>{{ row.value }}</p></template
     >
 
     <template v-if="sulfur" #cell(sulfur)="row">
@@ -42,7 +73,7 @@
 
     <template v-if="!sulfur" #cell(gunpowder)="row">
       <img :src="resourcesData.gunpowder" />
-      <p style="width: 140px">
+      <p>
         {{
           Math.ceil(
             ((row.item.sulfur * (calcCountItems(row.item).value || 1)) / 20) * 10
@@ -52,8 +83,8 @@
     </template>
 
     <template #cell(count)="row">
-      <div class="d-flex gap-3">
-        <div class="" v-for="res in row.item['resources']">
+      <div class="d-flex gap-3 justify-content-center">
+        <div v-for="res in row.item['resources']">
           <img :src="resourcesData[Object.keys(res)[0]]" alt="" />
           <p>
             {{
@@ -67,7 +98,7 @@
 </template>
 
 <script setup>
-import { reactive, computed } from 'vue'
+import { reactive, computed, ref, onMounted, onUnmounted } from 'vue'
 import explosivesData from '@/data/raidData'
 import resourcesData from '@/data/resources'
 import bench1 from '@/assets/benchs/workbench1.png'
@@ -76,6 +107,7 @@ import bench3 from '@/assets/benchs/workbench3.png'
 import getDamageType from '@/hooks/getDamageType.js'
 import calculateCountExplosive from '../hooks/calcutaleCountExplosive'
 import { useI18n } from 'vue-i18n'
+import { BButton } from 'bootstrap-vue-next'
 
 var { t } = useI18n({ useScope: 'global' })
 
@@ -97,16 +129,13 @@ var filterFields = computed(() => {
     {
       key: 'workbenchLevel',
       label: t('table.workbench'),
-      sortable: true,
       class: 'text-center align-middle'
     },
     {
       key: 'totalScrap',
       label: t('table.countScrap'),
-      sortable: true,
       class: 'text-center align-middle'
     },
-
     { key: 'count', label: t('table.resources'), class: 'text-center align-middle' }
   ]
 
@@ -126,8 +155,31 @@ var filterFields = computed(() => {
   return defaultFilters
 })
 
+const ex2CurrentPage = ref(3)
+
+var paginationItem = computed(() => {
+  var array = Array(2)
+  array[0] = { key: 'item', label: 'предмет', class: 'text-center align-middle w-50' }
+  array[1] = filterFields.value[ex2CurrentPage.value]
+  return array
+})
+
 var calcCountItems = (explosive) =>
   computed(() => calculateCountExplosive(explosive, props.currentBuild))
+
+var windowWidth = ref(window.innerWidth)
+
+var handleResize = () => {
+  windowWidth.value = window.innerWidth
+}
+
+onMounted(() => {
+  window.addEventListener('resize', handleResize)
+})
+
+onUnmounted(() => {
+  window.removeEventListener('resize', handleResize)
+})
 </script>
 
 <style scoped>
@@ -136,13 +188,13 @@ var calcCountItems = (explosive) =>
 }
 
 .p {
-  width: 120px;
+  max-width: 120px;
 }
 
 .count {
   color: red;
-  top: 40px;
-  left: 158px;
+  bottom: 20%;
+  right: 15%;
   position: absolute;
   z-index: 1;
   font-weight: bold;

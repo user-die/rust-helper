@@ -1,41 +1,49 @@
 <template>
-  <div class="container">
+  <div class="container-fluid cont">
     <Language></Language>
+    <div class="row justify-content-center gap-3 gap-xl-0 h-100">
+      <article class="col-12 col-sm-12 col-xl-9 p-0 p-sm-2">
+        <h3 class="mb-3 text-danger text-center" style="font-weight: 600">{{ t('tableRes') }}</h3>
 
-    <article>
-      <section class="explosives bg-dark" style="border-radius: 20px; padding: 10px; width: 1280px">
-        <Table style="width: 1260px" :currentBuild="currentBuild" :sulfur="sulfur"></Table>
-      </section>
-    </article>
+        <Table :currentBuild="currentBuild" :sulfur="sulfur"></Table>
+      </article>
 
-    <article style="align-self: center" class="d-flex flex-column align-items-center gap-3">
-      <BFormRadioGroup
-        v-model="sulfur"
-        name="radios-btn-default"
-        buttons
-        style="max-width: 400px"
-        button-variant="outline-info"
+      <article
+        style="align-self: center"
+        class="col-10 col-sm-8 col-md-6 col-xl-3 d-flex flex-column align-items-center gap-3"
       >
-        <BFormRadio :value="true">{{ t('table.sulfur') }}</BFormRadio>
-        <BFormRadio :value="false">{{ t('table.gunpowder') }}</BFormRadio>
-      </BFormRadioGroup>
+        <BFormRadioGroup
+          class="col-12"
+          v-model="sulfur"
+          name="radios-btn-default"
+          buttons
+          button-variant="outline-danger"
+        >
+          <BFormRadio :value="true">
+            <p style="font-weight: 600; margin: 0">{{ t('table.sulfur') }}</p>
+          </BFormRadio>
+          <BFormRadio :value="false"
+            ><p style="font-weight: 600; margin: 0">{{ t('table.gunpowder') }}</p></BFormRadio
+          >
+        </BFormRadioGroup>
 
-      <BFormSelect v-model="buildId">
-        <BFormSelectOption :value="null" disabled>{{ t('buildings') }}</BFormSelectOption>
-        <BFormSelectOption v-for="item in buildData" :value="item.value">{{
-          t(`build.${item.text}`)
-        }}</BFormSelectOption>
-      </BFormSelect>
+        <BFormSelect v-model="buildId">
+          <BFormSelectOption :value="null" disabled>{{ t('buildings') }}</BFormSelectOption>
+          <BFormSelectOption v-for="item in buildData" :value="item.value">{{
+            t(`build.${item.text}`)
+          }}</BFormSelectOption>
+        </BFormSelect>
 
-      <section
-        v-if="currentBuild"
-        class="d-flex flex-column gap-1 align-items-center position-relative"
-      >
-        <img style="width: 200px" :src="currentBuild.img" alt="" />
-        <p class="m-0">{{ t('durability') }}: {{ currentBuild.hp }}</p>
-        <p>{{ `${t('decay')}: ${currentBuild.decay}  ${t('hours')}` }}</p>
-      </section>
-    </article>
+        <section
+          v-if="currentBuild"
+          class="d-flex flex-column gap-1 align-items-center position-relative"
+        >
+          <img style="width: 200px" :src="currentBuild.img" alt="" />
+          <p class="m-0">{{ t('durability') }}: {{ currentBuild.hp }}</p>
+          <p>{{ `${t('decay')}: ${currentBuild.decay}  ${t('hours')}` }}</p>
+        </section>
+      </article>
+    </div>
   </div>
 </template>
 
@@ -123,11 +131,11 @@ var chipResources = computed(() =>
 </script>
 
 <style scoped>
-.container {
+.cont {
   display: flex;
   gap: 50px;
-  justify-content: space-evenly;
-  height: calc(100vh - 30px);
+  justify-content: center;
+  height: calc(100vh - 50px);
   align-items: center;
 }
 
@@ -141,7 +149,6 @@ var chipResources = computed(() =>
 .explosives {
   display: flex;
   flex-direction: column;
-
   column-gap: 35px;
 }
 </style>
