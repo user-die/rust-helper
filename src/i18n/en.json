@@ -7,10 +7,13 @@
   "choose an explosive": "choose an explosive",
   "choose the target": "choose the target",
   "calculator for the raid": "Raid calculator",
-  "tableRes": "The table of resources for the raid",
+  "tableRes": "The table of resources for the ",
+  "raid": "raid",
+  "latest": "The latest update",
 
   "project": {
-    "about": "The project was created in order to simplify your preparation and the course of the raid in the Rust game.",
+    "rust": "Rust game",
+    "about": "The project was created in order to simplify your preparation and the course of the raid in the",
     "future": "What will happen in the future",
     "send": "send",
     "more": "more structures and weapons",

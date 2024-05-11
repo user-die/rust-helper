@@ -1,77 +1,85 @@
 <template>
-  <div class="container mx-auto p-0 w-100">
-    <Language></Language>
-    <div class="row w-100 h-100 m-0 justify-content-center">
-      <article
-        class="h-100 py-1 t-sm-0 col-12 col-lg-8 text-black d-flex flex-column justify-content-around"
-      >
-        <section>
-          <p>{{ t('project.about') }}</p>
-        </section>
+  <main>
+    <footer>
+      <div class="container mx-auto p-0 w-100">
+        <Language></Language>
+        <div class="row w-100 h-100 m-0 justify-content-center">
+          <article
+            class="h-100 py-1 t-sm-0 col-12 col-lg-8 text-black d-flex flex-column justify-content-around"
+          >
+            <section>
+              <strong>
+                <p class="fw-normal">
+                  {{ t('project.about') }} <b class="fw-normal">{{ t('project.rust') }}</b>
+                </p>
+              </strong>
+            </section>
 
-        <section>
-          <h5>{{ t('project.future') }}:</h5>
-          <ul>
-            <li>{{ t('project.more') }}</li>
-            <li>{{ t('project.calc') }}</li>
-            <li>{{ t('project.apps') }}</li>
-          </ul>
-        </section>
+            <section>
+              <h5>{{ t('project.future') }}:</h5>
+              <ul>
+                <li>{{ t('project.more') }}</li>
+                <li>{{ t('project.calc') }}</li>
+                <li>{{ t('project.apps') }}</li>
+              </ul>
+            </section>
 
-        <section>
-          <p>
-            {{ t('project.youcan') }}
-            <a target="_blank" href="https://www.donationalerts.com/r/userdie">{{
-              t('project.link')
-            }}</a>
-          </p>
-        </section>
+            <section>
+              <p>
+                {{ t('project.youcan') }}
+                <a target="_blank" href="https://www.donationalerts.com/r/userdie">{{
+                  t('project.link')
+                }}</a>
+              </p>
+            </section>
 
-        <section class="mb-4">
-          <p class="mb-2">
-            {{ t('project.findErrors') }}
-          </p>
+            <section class="mb-4">
+              <p class="mb-2">
+                {{ t('project.findErrors') }}
+              </p>
 
-          <form @submit.prevent="onSubmit" class="d-flex flex-column">
-            <div class="d-flex flex-column mb-2">
-              <label for="email">{{ t('project.Email') }}</label>
-              <input
-                class="form-control"
-                type="email"
-                v-model="email"
-                id="email"
-                placeholder="john@doe.com"
-                style="max-width: 500px"
-              />
-            </div>
-            <div class="d-flex flex-column mb-2">
-              <label for="message">{{ t('project.message') }}</label>
-              <textarea
-                class="form-control"
-                v-model="message"
-                id="message"
-                :placeholder="t('project.enterMessage')"
-              ></textarea>
-            </div>
-            <div class="formcarry-block text-center text-lg-start">
-              <button class="btn btn-danger" type="submit">{{ t('project.send') }}</button>
-            </div>
-            <div v-if="showNotification()" class="formcarry-block">
-              <div :class="`formcarry-message-block fc-${icon} active`">
-                <div class="fc-message-icon"></div>
-                <div class="text-danger">{{ errorMessage() }}</div>
-                <div class="fc-message-close" @click="resetStates()"></div>
-              </div>
-            </div>
-          </form>
+              <form @submit.prevent="onSubmit" class="d-flex flex-column">
+                <div class="d-flex flex-column mb-2">
+                  <label for="email">{{ t('project.Email') }}</label>
+                  <input
+                    class="form-control"
+                    type="email"
+                    v-model="email"
+                    id="email"
+                    placeholder="john@doe.com"
+                    style="max-width: 500px"
+                  />
+                </div>
+                <div class="d-flex flex-column mb-2">
+                  <label for="message">{{ t('project.message') }}</label>
+                  <textarea
+                    class="form-control"
+                    v-model="message"
+                    id="message"
+                    :placeholder="t('project.enterMessage')"
+                  ></textarea>
+                </div>
+                <div class="formcarry-block text-center text-lg-start">
+                  <button class="btn btn-danger" type="submit">{{ t('project.send') }}</button>
+                </div>
+                <div v-if="showNotification()" class="formcarry-block">
+                  <div :class="`formcarry-message-block fc-${icon} active`">
+                    <div class="fc-message-icon"></div>
+                    <div class="text-danger">{{ errorMessage() }}</div>
+                    <div class="fc-message-close" @click="resetStates()"></div>
+                  </div>
+                </div>
+              </form>
 
-          <p class="text-center mt-3 mt-sm-5 text-white mb-0">
-            created by <a target="_blank" href="https://github.com/user-die">@userdie</a>
-          </p>
-        </section>
-      </article>
-    </div>
-  </div>
+              <p class="text-center mt-3 mt-sm-5 text-white mb-0">
+                created by <a target="_blank" href="https://github.com/user-die">@userdie</a>
+              </p>
+            </section>
+          </article>
+        </div>
+      </div>
+    </footer>
+  </main>
 </template>
 
 <script setup>

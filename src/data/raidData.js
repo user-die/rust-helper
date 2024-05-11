@@ -4,6 +4,7 @@ import ammoRocketHv from './../assets/explosives/ammo.rocket.hv.png'
 import explosiveSatchel from './../assets/explosives/explosive.satchel.png'
 import explosiveTimed from './../assets/explosives/explosive.timed.png'
 import explosiveBeancan from './../assets/explosives/grenade.beancan.png'
+import hegrenade from './../assets/explosives/ammo.grenadelauncher.he.png'
 import f1 from './../assets/explosives/grenade.f1.png'
 
 class Explosive {
@@ -159,6 +160,29 @@ var f1grenade = new Explosive(
   30
 )
 
+var HEgrenade = new Explosive(
+  '40mm HE Grenade',
+  28.2,
+  70,
+  17.5,
+  31.5,
+  17.5,
+  17,
+  hegrenade,
+  [],
+  0,
+  0,
+  0,
+  0
+)
+
+var IncendiaryRocket = new Explosive(
+  'Incendiary Rocket',
+  0
+
+  // есть сплеш
+)
+
 var explosives = [
   timedExplosiveCharge,
   rocket,
@@ -167,6 +191,7 @@ var explosives = [
   highVelocityRocket,
   explosiveAmmo,
   f1grenade
+  //HEgrenade
 ]
 
 export default explosives

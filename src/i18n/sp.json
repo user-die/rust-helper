@@ -7,10 +7,13 @@
   "choose an explosive": "Elige una explosiva",
   "choose the target": "elige el objetivo",
   "calculator for the raid": "Calculadora para la redada",
-  "tableRes": "La tabla de recursos para el raid",
+  "tableRes": "La tabla de recursos para el",
+  "raid": "raid",
+  "latest": "Última actualización",
 
   "project": {
-    "about": "El proyecto fue creado para simplificar tu preparación y el proceso de incursión en el juego Rust..",
+    "rust": "Rust",
+    "about": "El proyecto fue creado para simplificar tu preparación y el proceso de incursión en el juego",
     "future": "Lo que ocurrirá en el futuro",
     "send": "enviar",
     "more": "más estructuras y armas",
