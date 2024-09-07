@@ -1,0 +1,61 @@
+{
+  "durability": "durability",
+  "decay": "decay",
+  "hours": "hours",
+  "buildings": "buildins",
+  "The required amount of explosives": "The required amount of explosives",
+  "choose an explosive": "choose an explosive",
+  "choose the target": "choose the target",
+  "calculator for the raid": "Raid calculator",
+  "tableRes": "The table of resources for the raid",
+
+  "project": {
+    "about": "The project was created in order to simplify your preparation and the course of the raid in the Rust game.",
+    "future": "What will happen in the future",
+    "send": "send",
+    "more": "more structures and weapons",
+    "calc": "calculation of the cheapest possible raid",
+    "apps": "Mobile and desktop application",
+    "findErrors": "Did you find a mistake? Do you want to suggest an idea? Do you want to praise the author? Fill out the form below!",
+    "Email": "Email for feedback",
+    "message": "Message",
+    "youcan": "You can participate in the development of the project by offering your ideas for innovations or financially supporting the project",
+    "link": "by the link",
+    "enterMessage": "Enter your message..."
+  },
+
+  "nav": {
+    "table": "table",
+    "expCalc": "calculator",
+    "project": "about project"
+  },
+
+  "build": {
+    "Wooden Door": "Wooden Door",
+    "Sheet Metal Door": "Sheet Metal Door",
+    "Garage Door": "Garage Door",
+    "Armored Door": "Armored Door",
+    "Wooden structures": "Wooden construction",
+    "Stone structures": "Stone construction",
+    "Metal structures": "Metal construction",
+    "Armored structures": "Armored construction"
+  },
+
+  "table": {
+    "item": "item",
+    "damage": "damage",
+    "workbench": "workbench",
+    "countScrap": "count scrap",
+    "resources": "resources",
+    "sulfur": "sulfur",
+    "charcoal": "charcoal",
+    "gunpowder": "gunpowder",
+    "Timed Explosive Charge": "Timed Explosive Charge",
+    "Rocket": "Rocket",
+    "Satchel Charge": "Satchel Charge",
+    "Beancan Grenade": "Beancan Grenade",
+    "High Velocity Rocket": "High Velocity Rocket",
+    "ExplosiveAmmo": "Explosive 5.56 Rifle Ammo",
+    "F1 Grenade": "F1 Grenade"
+  }
+}
