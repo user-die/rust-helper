@@ -22,39 +22,39 @@ export default defineConfig({
         id: "/",
         icons: [
           {
-            src: "icon64.png",
-            type: "image/png",
+            src: "icon64.webp",
+            type: "image/webp",
             sizes: "64x64",
           },
           {
-            src: "icon192.png",
-            type: "image/png",
+            src: "icon192.webp",
+            type: "image/webp",
             sizes: "192x192",
           },
           {
-            src: "icon512.png",
-            type: "image/png",
+            src: "icon512.webp",
+            type: "image/webp",
             sizes: "512x512",
           },
         ],
         screenshots: [
           {
-            src: "screenshot1.png",
+            src: "screenshot1.webp",
             sizes: "533x795",
-            type: "image/png",
+            type: "image/webp",
             form_factor: "narrow",
           },
           {
-            src: "screenshot2.png",
+            src: "screenshot2.webp",
             sizes: "1920x945",
-            type: "image/png",
+            type: "image/webp",
             form_factor: "wide",
           },
         ],
       },
 
       workbox: {
-        globPatterns: ["**/*.{js,css,html,svg,png,ico}"],
+        globPatterns: ["**/*.{js,css,html,svg,png,ico, webp}"],
         cleanupOutdatedCaches: true,
         clientsClaim: true,
       },

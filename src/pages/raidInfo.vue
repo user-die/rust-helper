@@ -17,14 +17,14 @@
       </option>
     </select>
 
-    <ul class="flex flex-wrap gap-3">
+    <TransitionGroup name="list" tag="ul" class="flex flex-wrap gap-3">
       <Build
         v-for="build of buildsStore.builds"
         :id="build.id"
         :key="build.id"
         :count="build.count"
       />
-    </ul>
+    </TransitionGroup>
 
     <Table />
   </main>
@@ -43,3 +43,15 @@ const buildsStore = useBuildsStore();
 //var { t } = useI18n({ useScope: "global" });
 var sulfur = ref(true);
 </script>
+
+<style>
+.list-enter-active,
+.list-leave-active {
+  transition: all 0.5s ease;
+}
+.list-enter-from,
+.list-leave-to {
+  opacity: 0;
+  transform: translateX(30px);
+}
+</style>

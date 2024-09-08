@@ -28,7 +28,7 @@
 
     <td class="flex flex-col items-center gap-1">
       <img
-        src="../assets/resources/scrap.png"
+        src="../assets/resources/scrap.webp"
         alt=""
         class="h-8 sm:h-10 md:h-14"
       />
@@ -39,7 +39,7 @@
 
     <td class="flex flex-col items-center gap-1">
       <img
-        src="../assets/resources/sulfur.png"
+        src="../assets/resources/sulfur.webp"
         alt=""
         class="h-8 sm:h-10 md:h-14"
       />
@@ -50,7 +50,7 @@
 
     <td class="flex flex-col items-center gap-1">
       <img
-        src="../assets/resources/charcoal.png"
+        src="../assets/resources/charcoal.webp"
         alt=""
         class="h-8 sm:h-10 md:h-14"
       />
