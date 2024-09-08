@@ -26,9 +26,10 @@ class Explosive {
 
   calcCount(builds) {
     this.count = builds.reduce((out, build) => {
-      out += Math.ceil((build.hp / this.damage[build.type]) * build.count);
+      out += Math.ceil(build.hp / this.damage[build.type]) * build.count;
       return out;
     }, 0);
+    console.log(this.count);
   }
 
   calcResources() {
