@@ -1,4 +1,6 @@
 <template>
+	<!-- 
+
   <nav>
     <ul class="flex gap-3 mt-1 justify-center">
       <Tab
@@ -10,10 +12,10 @@
       </Tab>
     </ul>
   </nav>
-
-  <transition name="fade">
-    <component :is="tabs.find((tab) => tab.title === activeTab)?.component" />
-  </transition>
+   -->
+	<transition name="fade">
+		<component :is="tabs.find((tab) => tab.title === activeTab)?.component" />
+	</transition>
 </template>
 
 <script setup>
@@ -23,11 +25,11 @@ import Monuments from "../pages/Monuments.vue";
 import { ref, watch } from "vue";
 
 const tabs = [
-  {
-    title: "Калькулятор рейда",
-    component: RaidInfo,
-  },
-  { title: "Монументы", component: Monuments },
+	{
+		title: "Калькулятор рейда",
+		component: RaidInfo,
+	},
+	{ title: "Монументы", component: Monuments },
 ];
 
 const activeTab = ref("Калькулятор рейда");
@@ -36,11 +38,11 @@ const activeTab = ref("Калькулятор рейда");
 <style>
 .fade-enter-active,
 .fade-leave-active {
-  transition: opacity 0.5s ease;
+	transition: opacity 0.5s ease;
 }
 
 .fade-enter-from,
 .fade-leave-to {
-  opacity: 0;
+	opacity: 0;
 }
 </style>
